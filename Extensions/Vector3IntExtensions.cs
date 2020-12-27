@@ -1,4 +1,6 @@
-﻿namespace YoukaiFox.UnityExtensions
+﻿using UnityEngine;
+
+namespace YoukaiFox.UnityExtensions
 {
     public static class Vector3IntExtensions 
     {
@@ -7,9 +9,9 @@
         /// </summary>
         /// <param name="vector">Vector.</param>
         /// <returns>Vector3 struct.</returns>
-        public static UnityEngine.Vector3 ToVector3(this UnityEngine.Vector3Int vector)
+        public static Vector3 ToVector3(this Vector3Int vector)
         {
-            return new UnityEngine.Vector3(
+            return new Vector3(
                 System.Convert.ToSingle(vector.x),
                 System.Convert.ToSingle(vector.y),
                 System.Convert.ToSingle(vector.z)

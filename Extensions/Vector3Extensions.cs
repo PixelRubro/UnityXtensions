@@ -10,9 +10,9 @@ namespace YoukaiFox.UnityExtensions
         /// <param name="position">World position.</param>
         /// <param name="otherPositions">Other world positions.</param>
         /// <returns>Closest position.</returns>
-        public static UnityEngine.Vector3 GetClosest(this UnityEngine.Vector3 position, params UnityEngine.Vector3[] additionalPositions)
+        public static Vector3 GetClosest(this Vector3 position, params Vector3[] additionalPositions)
         {
-            var closest = UnityEngine.Vector3.zero;
+            var closest = Vector3.zero;
             var shortestDistance = Mathf.Infinity;
 
             foreach (var otherPosition in additionalPositions)

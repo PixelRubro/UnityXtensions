@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace YoukaiFox.UnityExtensions
 {
@@ -11,7 +9,7 @@ namespace YoukaiFox.UnityExtensions
         /// </summary>
         /// <param name="rb">.</param>
         /// <param name="newDirection">.</param>
-        public static void ChangeDirection(this UnityEngine.Rigidbody rb, UnityEngine.Vector3 newDirection)
+        public static void ChangeDirection(this UnityEngine.Rigidbody rb, Vector3 newDirection)
         {
             rb.velocity = newDirection * rb.velocity.magnitude;
         }

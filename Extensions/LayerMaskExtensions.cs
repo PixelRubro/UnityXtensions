@@ -1,4 +1,6 @@
-﻿namespace YoukaiFox.UnityExtensions
+﻿using UnityEngine;
+
+namespace YoukaiFox.UnityExtensions
 {
     public static class LayerMaskExtensions
     {
@@ -7,7 +9,7 @@
         /// </summary>
         /// <param name="layerNames"></param>
         /// <returns></returns>
-        public static UnityEngine.LayerMask Create(this UnityEngine.LayerMask mask, params string[] layerNames)
+        public static LayerMask Create(this LayerMask self, params string[] layerNames)
         {
             return NamesToMask(layerNames);
         }
@@ -17,7 +19,7 @@
         /// </summary>
         /// <param name="layerNumbers"></param>
         /// <returns></returns>
-        public static UnityEngine.LayerMask Create(params int[] layerNumbers)
+        public static LayerMask Create(params int[] layerNumbers)
         {
             return LayerNumbersToMask(layerNumbers);
         }
@@ -25,23 +27,23 @@
         /// <summary>
         /// Returns a Layer Mask with the provided layers added.
         /// </summary>
-        /// <param name="original"></param>
+        /// <param name="self"></param>
         /// <param name="layerNames"></param>
         /// <returns></returns>
-        public static UnityEngine.LayerMask AddLayer(this UnityEngine.LayerMask original, params string[] layerNames)
+        public static LayerMask AddLayer(this LayerMask self, params string[] layerNames)
         {
-            return original | NamesToMask(layerNames);
+            return self | NamesToMask(layerNames);
         }
 
         /// <summary>
         /// Returns a Layer Mask with the provided layers removed.
         /// </summary>
-        /// <param name="original"></param>
+        /// <param name="self"></param>
         /// <param name="layerNames"></param>
         /// <returns></returns>
-        public static UnityEngine.LayerMask RemoveLayer(this UnityEngine.LayerMask original, params string[] layerNames)
+        public static LayerMask RemoveLayer(this LayerMask self, params string[] layerNames)
         {
-            UnityEngine.LayerMask invertedOriginal = ~original;
+            LayerMask invertedOriginal = ~self;
             return ~(invertedOriginal | NamesToMask(layerNames));
         }
 
@@ -50,13 +52,13 @@
         /// </summary>
         /// <param name="layerNames"></param>
         /// <returns></returns>
-        private static UnityEngine.LayerMask NamesToMask(params string[] layerNames)
+        private static LayerMask NamesToMask(params string[] layerNames)
         {
-            UnityEngine.LayerMask resultingMask = (UnityEngine.LayerMask) 0;
+            LayerMask resultingMask = (LayerMask) 0;
 
             foreach (var name in layerNames)
             {
-                resultingMask |= (1 << UnityEngine.LayerMask.NameToLayer(name));
+                resultingMask |= (1 << LayerMask.NameToLayer(name));
             }
 
             return resultingMask;
@@ -67,9 +69,9 @@
         /// </summary>
         /// <param name="layerNumbers"></param>
         /// <returns></returns>
-        private static UnityEngine.LayerMask LayerNumbersToMask(params int[] layerNumbers)
+        private static LayerMask LayerNumbersToMask(params int[] layerNumbers)
         {
-            UnityEngine.LayerMask resultingMask = (UnityEngine.LayerMask) 0;
+            LayerMask resultingMask = (LayerMask) 0;
 
             foreach (var layer in layerNumbers)
             {
@@ -81,23 +83,23 @@
         /// <summary>
         /// Checks if the Layer Maks has a specific layer by its number.
         /// </summary>
-        /// <param name="mask"></param>
+        /// <param name="self"></param>
         /// <param name="layerNumber"></param>
         /// <returns></returns>
-        public static bool Contains(this UnityEngine.LayerMask mask, int layerNumber)
+        public static bool Contains(this LayerMask self, int layerNumber)
         {
-            return mask == (mask | (1 << layerNumber));
+            return self == (self | (1 << layerNumber));
         }
 
         /// <summary>
         /// Checks if the Layer Maks has a specific layer by its name.
         /// </summary>
-        /// <param name="mask"></param>
+        /// <param name="self"></param>
         /// <param name="layerNumber"></param>
         /// <returns></returns>
-        public static bool Contains(this UnityEngine.LayerMask mask, string layerName)
+        public static bool Contains(this LayerMask self, string layerName)
         {
-            return mask == (mask | (1 << UnityEngine.LayerMask.NameToLayer(layerName)));
+            return self == (self | (1 << LayerMask.NameToLayer(layerName)));
         }
     }
 }

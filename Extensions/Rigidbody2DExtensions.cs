@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace YoukaiFox.UnityExtensions.Rigidbody
 {
@@ -11,7 +9,7 @@ namespace YoukaiFox.UnityExtensions.Rigidbody
         /// </summary>
         /// <param name="rb2d">.</param>
         /// <param name="newDirection">.</param>
-        public static void ChangeDirection(this UnityEngine.Rigidbody2D rb2d, Vector2 newDirection)
+        public static void ChangeDirection(this Rigidbody2D rb2d, Vector2 newDirection)
         {
             rb2d.velocity = newDirection * rb2d.velocity.magnitude;
         }
