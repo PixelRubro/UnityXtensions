@@ -77,5 +77,27 @@
             }
             return resultingMask;
         }
+
+        /// <summary>
+        /// Checks if the Layer Maks has a specific layer by its number.
+        /// </summary>
+        /// <param name="mask"></param>
+        /// <param name="layerNumber"></param>
+        /// <returns></returns>
+        public static bool Contains(this UnityEngine.LayerMask mask, int layerNumber)
+        {
+            return mask == (mask | (1 << layerNumber));
+        }
+
+        /// <summary>
+        /// Checks if the Layer Maks has a specific layer by its name.
+        /// </summary>
+        /// <param name="mask"></param>
+        /// <param name="layerNumber"></param>
+        /// <returns></returns>
+        public static bool Contains(this UnityEngine.LayerMask mask, string layerName)
+        {
+            return mask == (mask | (1 << UnityEngine.LayerMask.NameToLayer(layerName)));
+        }
     }
 }
