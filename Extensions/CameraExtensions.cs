@@ -32,27 +32,5 @@ namespace YoukaiFox.UnityExtensions
             plane.Raycast(ray, out float distance);
             return ray.GetPoint(distance);
         }
-
-        public static float ScreenToWorldSize(this Camera camera, float pixelSize, float clipPlane)
-        {
-            if (camera.orthographic)
-            {
-                return pixelSize * camera.orthographicSize * 2f / camera.pixelHeight;
-            }
-
-            return pixelSize * clipPlane * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad) * 2f /
-                   camera.pixelHeight;
-        }
-
-        public static float WorldToScreenSize(this Camera camera, float worldSize, float clipPlane)
-        {
-            if (camera.orthographic)
-            {
-                return worldSize * camera.pixelHeight * 0.5f / camera.orthographicSize;
-            }
-
-            return worldSize * camera.pixelHeight * 0.5f /
-                   (clipPlane * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad));
-        }
     }
 }

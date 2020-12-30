@@ -4,6 +4,7 @@ namespace YoukaiFox.UnityExtensions
 {
     public static class Vector2Extensions
     {
+        // Author: https://github.com/mminer/unity-extensions
         /// <summary>
         /// Finds the position closest to the current one.
         /// </summary>

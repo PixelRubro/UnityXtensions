@@ -4,6 +4,7 @@ namespace YoukaiFox.UnityExtensions
 {
     public static class Vector2IntExtensions 
     {
+        // Author: https://github.com/mminer/unity-extensions
         /// <summary>
         /// Converts a Vector3Int struct to a Vector3.
         /// </summary>

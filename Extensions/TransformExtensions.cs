@@ -6,16 +6,21 @@ namespace YoukaiFox.UnityExtensions
 {
     public static class TransformExtensions
     {
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Makes the given game objects children of the transform.
+        /// Set the given transforms as children of the transform.
         /// </summary>
         /// <param name="self">Parent transform.</param>
         /// <param name="children">Children to be parented.</param>
-        public static void AddChildren(this Transform self, Transform[] children)
+        public static void AddChildren(this Transform self, params Transform[] children)
         {
-            System.Array.ForEach(children, child => child.transform.parent = self);
+            foreach (Transform child in children)
+            {
+                child.SetParent(self, false);
+            }
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
         /// Get all the children parented by the transform.
         /// </summary>
@@ -33,60 +38,96 @@ namespace YoukaiFox.UnityExtensions
             return children;
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the x component of the transform's position.
+        /// Sets the X value of the transform's position.
         /// </summary>
-        /// <param name="value">Value of x.</param>
-        public static void SetWorldX(this Transform self, float value)
+        /// <param name="value">New X value.</param>
+        /// <param name="isLocal">Indicates if it should be treated like local position.</param>
+        public static void SetWorldX(this Transform self, float value, bool isLocal = false)
         {
-            self.position = new Vector3(value, self.position.y, self.position.z);
+            if (isLocal)
+                self.localPosition = new Vector3(value, self.localPosition.y, self.localPosition.z);
+            else
+                self.position = new Vector3(value, self.position.y, self.position.z);
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the y component of the transform's position.
+        /// Sets the Y value of the transform's position.
         /// </summary>
-        /// <param name="value">Value of y.</param>
-        public static void SetWorldY(this Transform self, float value)
+        /// <param name="value">New Y value.</param>
+        /// <param name="isLocal">Indicates if it should be treated like local position.</param>
+        public static void SetWorldY(this Transform self, float value, bool isLocal = false)
         {
-            self.position = new Vector3(self.position.x, value, self.position.z);
+            if (isLocal)
+                self.localPosition = new Vector3(self.localPosition.x, value, self.localPosition.z);
+            else
+                self.position = new Vector3(self.position.x, value, self.position.z);
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the z component of the transform's position.
+        /// Sets the Z value of the transform's position.
         /// </summary>
-        /// <param name="value">Value of z.</param>
-        public static void SetWorldZ(this Transform self, float value)
+        /// <param name="value">New Z valuez.</param>
+        /// <param name="isLocal">Indicates if it should be treated like local position.</param>
+        public static void SetWorldZ(this Transform self, float value, bool isLocal = false)
         {
-            self.position = new Vector3(self.position.x, self.position.y, value);
+            if (isLocal)
+                self.localPosition = new Vector3(self.localPosition.x, self.localPosition.y, value);
+            else
+                self.position = new Vector3(self.position.x, self.position.y, value);
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the transform local space position x component.
+        /// Reset the transform's position to (0, 0, 0).
         /// </summary>
-        /// <param name="value">Value of x component.</param>
-        public static void SetLocalX(this Transform self, float value)
+        /// <param name="isLocal">Indicates if it should be treated like local position.</param>
+        public static void ResetPosition(this Transform self, bool isLocal = false)
         {
-            self.localPosition = new Vector3(value, self.localPosition.y, self.localPosition.z);
+            if (isLocal)
+                self.localPosition = Vector3.zero;
+            else
+                self.position = Vector3.zero;
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the transform local space position y component.
+        /// Reset the transform's rotation to identity.
         /// </summary>
-        /// <param name="value">Value of y component.</param>
-        public static void SetLocalY(this Transform self, float value)
+        /// <param name="isLocal">Indicates if it should be treated like local rotation.</param>
+        public static void ResetRotation(this Transform self, bool isLocal = false)
         {
-            self.localPosition = new Vector3(self.localPosition.x, value, self.localPosition.z);
+            if (isLocal)
+                self.localRotation = Quaternion.identity;
+            else
+                self.rotation = Quaternion.identity;
         }
 
+        // Author: Youkai Fox Studio
         /// <summary>
-        /// Sets the transform local space position z component.
+        /// Reset the transform's scale to (1, 1, 1).
         /// </summary>
-        /// <param name="value">Value of z component.</param>
-        public static void SetLocalZ(this Transform self, float value)
+        public static void ResetScale(this Transform self)
         {
-            self.localPosition = new Vector3(self.localPosition.x, self.localPosition.y, value);
+            self.localScale = Vector3.one;
         }
 
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Reset the transform's position, rotation and scale.
+        /// </summary>
+        /// <param name="isLocal">Indicates if it should be treated locally.</param>
+        public static void Reset(this Transform self, bool isLocal = false)
+        {
+            self.ResetPosition(isLocal);
+            self.ResetRotation(isLocal);
+            self.ResetScale();
+        }
+
+        // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity
         /// <summary>
         /// Instantly look away from a target Vector3.
         /// </summary>
@@ -97,6 +138,7 @@ namespace YoukaiFox.UnityExtensions
             self.rotation = GetLookAwayFromRotation(self, target);
         }
 
+        // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity
         /// <summary>
         /// Instantly look away from a target transform.
         /// </summary>
@@ -107,6 +149,7 @@ namespace YoukaiFox.UnityExtensions
             self.rotation = GetLookAwayFromRotation(self, target);
         }
 
+        // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity
         /// <summary>
         /// Find the rotation to look away from a target Vector3.
         /// </summary>
@@ -117,6 +160,7 @@ namespace YoukaiFox.UnityExtensions
             return Quaternion.LookRotation(self.position - target);
         }
 
+        // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity
         /// <summary>
         /// Find the rotation to look away from a target transform.
         /// </summary>
@@ -125,6 +169,39 @@ namespace YoukaiFox.UnityExtensions
         public static Quaternion GetLookAwayFromRotation(this Transform self, Transform target)
         {
             return GetLookAwayFromRotation(self, target.position);
+        }
+
+        // Author: github.com/SanBen/UnityExtensions
+        /// <summary>
+        /// Forces the transform to face a camera.
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="camera"></param>
+        public static void BillboardRotate(this Transform self, Camera camera)
+        {
+            self.rotation = camera.transform.rotation;
+        }
+
+        // Author: github.com/SanBen/UnityExtensions
+        /// <summary>
+        /// Gets the full path to a Transform.
+        /// </summary>
+        /// <returns>The path.</returns>
+        /// <param name="self">Transform.</param>
+        public static string Path(this Transform self, Transform topLevel, bool includeTopLevel)
+        {
+            if (self.parent == null || self == topLevel)
+            {
+                if (includeTopLevel)
+                {
+                    return $"/{self.name}";
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            return $"{self.parent.Path(topLevel, includeTopLevel)}/{self.name}";
         }
     
         /// <summary>
@@ -159,6 +236,14 @@ namespace YoukaiFox.UnityExtensions
             self.position -= shakeValue;
         }
 
+        /// <summary>
+        /// Tranforms an object's position to give the effect of a shake. Must be called from "StartCoroutine" within a Monobehaviour 
+        /// </summary>
+        /// <param name="self">the GameObject to be shaken.</param>
+        /// <param name="shakeDuration">The duration that the shake should occur for.</param>
+        /// <param name="shakeIntensity">The max distance from the origin point the shake can move the object to. Sensible range between 0.01f and 1f.</param>
+        /// <param name="shakeSpeed">The frequency with which a new position is assigned. Use Time.Deltatime for new shake position every frame.</param>
+        /// <returns></returns>
         public static IEnumerator ApplyShake2D(this Transform self, float shakeDuration,
                                                float shakeIntensity, float shakeSpeed)
         {
