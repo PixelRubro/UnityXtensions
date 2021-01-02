@@ -65,5 +65,22 @@ namespace YoukaiFox.UnityExtensions
 
             return component;
         }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Look for the component in this game object. If not found, 
+        /// search through its children.
+        /// </summary>
+        /// <typeparam name="T">Unity component.</typeparam>
+        /// <returns>The component, if found or null if not.</returns>
+        public static T GetComponentInSelfOrChildren<T>(this GameObject self) where T : Component
+        {
+            var component = self.GetComponent<T>();
+
+            if (!component)
+                component = self.GetComponentInChildren<T>();
+
+            return component;
+        }
     }
 }
