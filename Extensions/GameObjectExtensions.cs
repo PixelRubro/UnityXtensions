@@ -82,5 +82,46 @@ namespace YoukaiFox.UnityExtensions
 
             return component;
         }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Look for the component in this game object. If not found, 
+        /// search for it in its parent transform.
+        /// </summary>
+        /// <typeparam name="T">Unity component.</typeparam>
+        /// <returns>The component, if found or null if not.</returns>
+        public static T GetComponentInItselfOrParent<T>(this GameObject self) where T : Component
+        {
+            var component = self.GetComponent<T>();
+
+            if (!component)
+                component = self.GetComponentInParent<T>();
+
+            return component;
+        }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Looks for a component of given type in objects directly
+        /// higher up in the hierarchy.
+        /// </summary>
+        /// <typeparam name="T">Unity engine component.</typeparam>
+        /// <returns>Component of given type if found, null if otherwise.</returns>
+        public static T GetComponentInAncestors<T>(this GameObject self) where T : Component
+        {
+            Transform currentAncestor = self.transform.parent;
+
+            while (currentAncestor != null)
+            {
+                var targetComponent = currentAncestor.gameObject.GetComponent<T>();
+
+                if (targetComponent != null)
+                    return targetComponent;
+                
+                currentAncestor = currentAncestor.parent;
+            }
+
+            return null;
+        }
     }
 }
