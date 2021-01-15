@@ -73,5 +73,27 @@ namespace YoukaiFox.UnityExtensions
             var main = self.main;
             main.startColor = color;
         }
+
+        // Author: Youkai Fox Studio
+        public static void PlayItselfAndChildren(this ParticleSystem self, bool forced)
+        {
+            if (forced)
+                self.PlayForced();
+            else
+                self.Play();
+
+            var childParticles = self.GetComponentsInChildren<ParticleSystem>();
+
+            if (childParticles.Length > 0)
+            {
+                foreach (var particle in childParticles)
+                {
+                    if (forced)
+                        particle.PlayForced();
+                    else
+                        particle.Play();
+                }
+            }
+        }
     }
 }
