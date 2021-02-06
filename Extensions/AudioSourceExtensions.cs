@@ -51,5 +51,21 @@ namespace YoukaiFox.UnityExtensions
             if (!self.isPlaying)
                 self.Play();
         }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Turn loop on and play the provided AudioClip.
+        /// </summary>
+        public static void PlayLooped(this AudioSource self, AudioClip clip)
+        {
+            if (!self)
+                return;
+
+            self.loop = true;
+            self.clip = clip;
+
+            if (!self.isPlaying)
+                self.Play();
+        }
     }
 }
