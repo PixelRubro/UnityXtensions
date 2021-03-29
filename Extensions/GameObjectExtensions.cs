@@ -36,7 +36,7 @@ namespace YoukaiFox.UnityExtensions
         /// <typeparamref name="T"/>. If it doesn't, add it.
         /// </summary>
         /// <returns>Component added or found.</returns>
-        public static T AddComponentIfDontContains<T>(this GameObject self) where T : Component
+        public static T AddComponentIfDontContain<T>(this GameObject self) where T : Component
         {
             T component = self.GetComponent<T>();
 
