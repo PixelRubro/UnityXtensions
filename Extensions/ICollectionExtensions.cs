@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Generic;
 
 namespace YoukaiFox.UnityExtensions
 {
@@ -7,7 +7,7 @@ namespace YoukaiFox.UnityExtensions
         /// <summary>
         /// Adds each one of the items in <paramref name="items"/>.
         /// </summary>
-        public static void Add<T>(this ICollection self, params T[] items)
+        public static void Add<T>(this ICollection<T> self, params T[] items)
         {
             foreach (var item in items)
             {
@@ -20,7 +20,7 @@ namespace YoukaiFox.UnityExtensions
         /// if they are found.
         /// </summary>
         /// <returns>True if all provided items were removed.</returns>
-        public static bool Remove<T>(this ICollection self, params T[] items)
+        public static bool Remove<T>(this ICollection<T> self, params T[] items)
         {
             var removedAll = true;
 
