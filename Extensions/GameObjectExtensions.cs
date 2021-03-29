@@ -19,11 +19,8 @@ namespace YoukaiFox.UnityExtensions
         /// Get the first component of the type T found in the object.
         /// If it can't be found, a new one will be added to the object.
         /// </summary>
-        /// <param name="self"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T GetOrAddComponent<T>(this GameObject self) 
-            where T : Component
+        /// <returns>Component added or found.</returns>
+        public static T GetOrAddComponent<T>(this GameObject self) where T : Component
         {
             T updatedObject = self.GetComponent<T>();
 
@@ -35,13 +32,28 @@ namespace YoukaiFox.UnityExtensions
 
         // Author: Youkai Fox Studio
         /// <summary>
+        /// Verifies if game object <paramref name="self"/> has component of type
+        /// <typeparamref name="T"/>. If it doesn't, add it.
+        /// </summary>
+        /// <returns>Component added or found.</returns>
+        public static T AddComponentOnlyIfItHasNot<T>(this GameObject self) where T : Component
+        {
+            T component = self.GetComponent<T>();
+
+            if (component != null)
+                return component;
+
+            return self.AddComponent<T>();
+        }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
         /// Returns true if the game object has a component of type T.
         /// </summary>
         /// <param name="self"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static bool HasComponent<T>(this GameObject self)
-            where T : Component
+        public static bool HasComponent<T>(this GameObject self) where T : Component
         {
             return !ReferenceEquals(self.GetComponent<T>(), null);
         }
