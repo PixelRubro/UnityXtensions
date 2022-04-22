@@ -29,5 +29,13 @@ namespace YoukaiFox.UnityExtensions
 
             return closest;
         }
+
+        public static Vector3 GetNearbyRandomPosition(this Vector3 self, float radius)
+        {
+            float randomX = Random.Range(-radius, radius);
+            float randomY = Random.Range(-radius, radius);
+            float randomZ = Random.Range(-radius, radius);
+            return new Vector3(self.x + randomX, self.y + randomY, self.z + randomZ);
+        }
     }
 }

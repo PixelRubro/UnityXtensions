@@ -39,5 +39,12 @@ namespace YoukaiFox.UnityExtensions
         {
             return (AngleToVectorInRads(self, vectorTo) * 180 / Mathf.PI) + 180;
         }
+
+        public static Vector2 GetNearbyRandomPosition(this Vector2 self, float radius)
+        {
+            float randomX = Random.Range(-radius, radius);
+            float randomY = Random.Range(-radius, radius);
+            return new Vector2(self.x + randomX, self.y + randomY);
+        }
     }
 }
