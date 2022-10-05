@@ -1,0 +1,11 @@
+{
+  "name": "com.softboiledgames.unityxtensions",
+  "displayName": "Unity Xtensions",
+  "description": "Class extensions and wrappers for Unity components.",
+  "version": "0.0.1",
+  "unity": "2019.4",
+  "license": "MIT",
+  "author": {
+    "name": "Soft Boiled Games"
+  }
+}

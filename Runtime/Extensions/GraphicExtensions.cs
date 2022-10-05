@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class GraphicExtensions
     {

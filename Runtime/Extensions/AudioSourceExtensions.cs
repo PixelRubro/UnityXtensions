@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class AudioSourceExtensions 
     {

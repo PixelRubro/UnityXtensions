@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions.Rigidbody
+namespace SoftBoiledGames.UnityXtensions.Rigidbody
 {
     public static class Rigidbody2DExtensions
     {

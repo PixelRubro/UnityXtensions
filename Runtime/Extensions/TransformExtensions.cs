@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class TransformExtensions
     {
@@ -125,6 +125,24 @@ namespace YoukaiFox.UnityExtensions
             self.ResetPosition(isLocal);
             self.ResetRotation(isLocal);
             self.ResetScale();
+        }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Teleport the transform to a direction at a speed.
+        /// </summary>
+        public static void Teleport(this Transform self, Vector2 direction, float speed)
+        {
+            self.Translate(direction * speed * Time.deltaTime);
+        }
+
+        // Author: Youkai Fox Studio
+        /// <summary>
+        /// Teleport the transform to a direction at a speed.
+        /// </summary>
+        public static void Teleport(this Transform self, Vector3 direction, float speed)
+        {
+            self.Translate(direction * speed * Time.deltaTime);
         }
 
         // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity

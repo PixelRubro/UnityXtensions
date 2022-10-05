@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions
+namespace YoukaiFox.Extensions
 {
     public static class Vector2Extensions
     {

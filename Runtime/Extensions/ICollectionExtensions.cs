@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class ICollectionExtensions 
     {

@@ -1,7 +1,7 @@
 // using UnityEngine;
 // using System.Collections;
 
-// namespace YoukaiFox.UnityExtensions
+// namespace SoftBoiledGames.UnityXtensions
 // {
 //     public class SceneManagerExtensions 
 //     {

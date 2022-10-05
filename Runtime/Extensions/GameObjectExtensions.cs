@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class GameObjectExtensions
     {
@@ -14,7 +14,7 @@ namespace YoukaiFox.UnityExtensions
             return ((mask.value & (1 << self.layer)) > 0);
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Get the first component of the type T found in the object.
         /// If it can't be found, a new one will be added to the object.
@@ -30,7 +30,7 @@ namespace YoukaiFox.UnityExtensions
             return self.AddComponent<T>();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Verifies if game object <paramref name="self"/> has component of type
         /// <typeparamref name="T"/>. If it doesn't, add it.
@@ -46,7 +46,7 @@ namespace YoukaiFox.UnityExtensions
             return self.AddComponent<T>();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Returns true if the game object has a component of type T.
         /// </summary>
@@ -55,7 +55,7 @@ namespace YoukaiFox.UnityExtensions
         /// <returns></returns>
         public static bool HasComponent<T>(this GameObject self) where T : Component
         {
-            return !ReferenceEquals(self.GetComponent<T>(), null);
+            return self.GetComponent<T>() != null;
         }
 
         // Author: github.com/dracolytch/DracoSoftwareExtensionsForUnity
@@ -78,7 +78,7 @@ namespace YoukaiFox.UnityExtensions
             return component;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Look for the component in this game object. If not found, 
         /// search through its children.
@@ -95,7 +95,7 @@ namespace YoukaiFox.UnityExtensions
             return component;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Look for the component in this game object. If not found, 
         /// search for it in its parent transform.
@@ -112,7 +112,7 @@ namespace YoukaiFox.UnityExtensions
             return component;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Angelo Savioti
         /// <summary>
         /// Looks for a component of given type in objects directly
         /// higher up in the hierarchy.

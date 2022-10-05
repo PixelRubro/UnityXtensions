@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace YoukaiFox.UnityExtensions
+namespace SoftBoiledGames.UnityXtensions
 {
     public static class Vector3Extensions
     {
@@ -36,6 +36,27 @@ namespace YoukaiFox.UnityExtensions
             float randomY = Random.Range(-radius, radius);
             float randomZ = Random.Range(-radius, radius);
             return new Vector3(self.x + randomX, self.y + randomY, self.z + randomZ);
+        }
+
+        public static Vector3 Clamp(this Vector3 self, float maxLength)
+        {
+            var magnitude = self.magnitude;
+
+            if (magnitude <= maxLength)
+            {
+                return self;
+            }
+
+            return self.normalized * maxLength;
+        }
+
+        /// <summary>
+        /// Get a random Vector3 with a length of 1.
+        /// </summary>
+        /// <returns></returns>
+        public static Vector3 GetRandomNormalizedVector3()
+        {
+            return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         }
     }
 }
