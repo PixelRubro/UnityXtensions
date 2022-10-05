@@ -1,4 +1,4 @@
-# SBExtensions
+# Unity Xtensions
 
 Collection of various C# method extensions and class wrappers to increase productivity when working with Unity game engine.
 
