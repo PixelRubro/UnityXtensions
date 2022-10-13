@@ -15,6 +15,6 @@ Collection of various C# method extensions and class wrappers to increase produc
 
 Add the following line to your `manifest.json` found in the "Packages" folder
 
-`    "com.softboiledgames.unityxtension": "git@github.com:SoftBoiledGames/UnityXtensions.git"`
+`    "com.softboiledgames.unityxtensions": "git@github.com:SoftBoiledGames/UnityXtensions.git"`
 
 Not all methods were created by us and those were taken from everywhere around the Unity open-source community.
