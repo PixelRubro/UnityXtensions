@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelSparkStudio.UnityXtensions
+namespace PixelSpark.UnityXtensions
 {
     public static class CanvasExtensions 
     {

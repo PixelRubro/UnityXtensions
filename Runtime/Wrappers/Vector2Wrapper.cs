@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixelSparkStudio.UnityXtensions
+namespace PixelSpark.UnityXtensions
 {
     public class Vector2Wrapper
     {

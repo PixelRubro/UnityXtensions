@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PixelSparkStudio.UnityXtensions
+namespace PixelSpark.UnityXtensions
 {
     public static class ICollectionExtensions 
     {

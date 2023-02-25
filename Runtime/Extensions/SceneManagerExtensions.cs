@@ -1,7 +1,7 @@
 // using UnityEngine;
 // using System.Collections;
 
-// namespace PixelSparkStudio.UnityXtensions
+// namespace PixelSpark.UnityXtensions
 // {
 //     public class SceneManagerExtensions 
 //     {
