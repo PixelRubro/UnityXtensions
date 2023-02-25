@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoftBoiledGames.UnityXtensions.Rigidbody
+namespace PixelSparkStudio.UnityXtensions.Rigidbody
 {
     public static class Rigidbody2DExtensions
     {

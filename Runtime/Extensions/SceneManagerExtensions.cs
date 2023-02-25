@@ -1,7 +1,7 @@
 // using UnityEngine;
 // using System.Collections;
 
-// namespace SoftBoiledGames.UnityXtensions
+// namespace PixelSparkStudio.UnityXtensions
 // {
 //     public class SceneManagerExtensions 
 //     {

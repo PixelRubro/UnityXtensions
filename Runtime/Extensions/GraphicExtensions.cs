@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace SoftBoiledGames.UnityXtensions
+namespace PixelSparkStudio.UnityXtensions
 {
     public static class GraphicExtensions
     {

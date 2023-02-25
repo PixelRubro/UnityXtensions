@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SoftBoiledGames.UnityXtensions
+namespace PixelSparkStudio.UnityXtensions
 {
     public static class ICollectionExtensions 
     {

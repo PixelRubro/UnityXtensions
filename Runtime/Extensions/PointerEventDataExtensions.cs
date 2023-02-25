@@ -1,7 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-namespace SoftBoiledGames.UnityXtensions
+namespace PixelSparkStudio.UnityXtensions
 {
     public static class PointerEventDataExtensions 
     {

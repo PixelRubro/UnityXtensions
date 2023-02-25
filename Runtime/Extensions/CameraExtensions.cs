@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SoftBoiledGames.UnityXtensions
+namespace PixelSparkStudio.UnityXtensions
 {
     public static class CameraExtensions
     {
