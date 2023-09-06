@@ -1,11 +1,11 @@
 {
-  "name": "com.pixelsparkstudio.unityxtensions",
+  "name": "com.vermillionvanguard.unityxtensions",
   "displayName": "Unity Xtensions",
   "description": "Class extensions and wrappers for Unity components.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "unity": "2019.4",
   "license": "MIT",
   "author": {
-    "name": "Pixel Spark Studio"
+    "name": "Vermillion Vanguard Studio"
   }
 }

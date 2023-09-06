@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixelSpark.UnityXtensions
+namespace VermillionVanguard.UnityXtensions
 {
     public static class TransformExtensions
     {
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Set the given transforms as children of the transform.
         /// </summary>
@@ -20,7 +20,7 @@ namespace PixelSpark.UnityXtensions
             }
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Get all the children parented by the transform.
         /// </summary>
@@ -38,7 +38,7 @@ namespace PixelSpark.UnityXtensions
             return children;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Sets the X value of the transform's position.
         /// </summary>
@@ -52,7 +52,7 @@ namespace PixelSpark.UnityXtensions
                 self.position = new Vector3(value, self.position.y, self.position.z);
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Sets the Y value of the transform's position.
         /// </summary>
@@ -66,7 +66,7 @@ namespace PixelSpark.UnityXtensions
                 self.position = new Vector3(self.position.x, value, self.position.z);
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Sets the Z value of the transform's position.
         /// </summary>
@@ -80,7 +80,7 @@ namespace PixelSpark.UnityXtensions
                 self.position = new Vector3(self.position.x, self.position.y, value);
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Reset the transform's position to (0, 0, 0).
         /// </summary>
@@ -93,7 +93,7 @@ namespace PixelSpark.UnityXtensions
                 self.position = Vector3.zero;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Reset the transform's rotation to identity.
         /// </summary>
@@ -106,7 +106,7 @@ namespace PixelSpark.UnityXtensions
                 self.rotation = Quaternion.identity;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Reset the transform's scale to (1, 1, 1).
         /// </summary>
@@ -115,7 +115,7 @@ namespace PixelSpark.UnityXtensions
             self.localScale = Vector3.one;
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Reset the transform's position, rotation and scale.
         /// </summary>
@@ -127,7 +127,7 @@ namespace PixelSpark.UnityXtensions
             self.ResetScale();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Teleport the transform to a direction at a speed.
         /// </summary>
@@ -136,7 +136,7 @@ namespace PixelSpark.UnityXtensions
             self.Translate(direction * speed * Time.deltaTime);
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Teleport the transform to a direction at a speed.
         /// </summary>

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PixelSpark.UnityXtensions
+namespace VermillionVanguard.UnityXtensions
 {
     public static class ICollectionExtensions 
     {

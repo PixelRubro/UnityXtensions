@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelSpark.UnityXtensions.Rigidbody
+namespace VermillionVanguard.UnityXtensions.Rigidbody
 {
     public static class Rigidbody2DExtensions
     {

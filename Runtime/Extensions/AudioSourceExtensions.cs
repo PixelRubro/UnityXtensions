@@ -1,25 +1,29 @@
 using UnityEngine;
 
-namespace PixelSpark.UnityXtensions
+namespace VermillionVanguard.UnityXtensions
 {
     public static class AudioSourceExtensions 
     {
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Start playing even if it's already playing something.
         /// </summary>
         public static void PlayForced(this AudioSource self)
         {
             if (!self)
+            {
                 return;
+            }
 
             if (self.isPlaying)
+            {
                 self.Stop();
+            }
 
             self.Play();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Start playing the <param name="clip"> even if it's already playing something.
         /// </summary>
@@ -37,7 +41,7 @@ namespace PixelSpark.UnityXtensions
             self.Play();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Turn loop on and play.
         /// </summary>
@@ -52,7 +56,7 @@ namespace PixelSpark.UnityXtensions
                 self.Play();
         }
 
-        // Author: Youkai Fox Studio
+        // Author: Vermillion Vanguard Studio
         /// <summary>
         /// Turn loop on and play the provided AudioClip.
         /// </summary>
