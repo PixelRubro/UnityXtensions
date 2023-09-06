@@ -17,4 +17,4 @@ Add the following line to your `manifest.json` found in the "Packages" folder
 
 `"com.vermillionvanguard.unityxtensions": "git@github.com:VermillionVanguard/UnityXtensions.git"`
 
-Not all methods were created by us and those were taken from everywhere around the Unity open-source community.
+Not all methods were created by us, some were taken from everywhere around the Unity open-source community.
