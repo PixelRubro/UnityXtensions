@@ -1,7 +1,7 @@
 // using UnityEngine;
 // using System.Collections;
 
-// namespace VermillionVanguard.UnityXtensions
+// namespace PixelRouge.UnityXtensions
 // {
 //     public class SceneManagerExtensions 
 //     {

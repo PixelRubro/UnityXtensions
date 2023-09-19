@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VermillionVanguard.UnityXtensions.Rigidbody
+namespace PixelRouge.UnityXtensions.Rigidbody
 {
     public static class Rigidbody2DExtensions
     {

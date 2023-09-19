@@ -1,7 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
-namespace VermillionVanguard.UnityXtensions
+namespace PixelRouge.UnityXtensions
 {
     public static class PointerEventDataExtensions 
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace VermillionVanguard.UnityXtensions
+namespace PixelRouge.UnityXtensions
 {
     public static class ICollectionExtensions 
     {

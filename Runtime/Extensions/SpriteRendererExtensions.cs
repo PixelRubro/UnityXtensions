@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VermillionVanguard.UnityXtensions
+namespace PixelRouge.UnityXtensions
 {
     public static class SpriteRendererExtensions
     {
